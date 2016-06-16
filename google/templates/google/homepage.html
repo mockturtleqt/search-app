@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+ </head>
+
+ <body>
+    <!--<form name="input" action="/search/" method="get">
+        <p><strong>What do you want to search for?</strong></p>
+        <p><input type="text" name="query" maxlength="50" size="60" value=""></p>
+    </form>-->
+    <div>
+        <form action="/search/" method="get">
+            What do you want to search for?<br>
+            <input type="text" name="query">
+
+        </form>
+    </div>
+
+    <div>
+        {% if urls %}
+            {% for url in urls %}
+                <a href="{{ url }}">{{ url|linebreaks }}</a>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+     <div>
+        <form action="/add_to_index/" method="get">
+            Index a page<br>
+            <input type="text" name="index">
+
+        </form>
+    </div>
+
+ </body>
+
+</html>
